@@ -12,12 +12,17 @@ public class Item {
         private String itemName;
         private String starName;
         private Integer price;
-        private UploadFile imageFile;
-        private List<UploadFile> imageFiles;
+//        private UploadFile imageFile;
+//        private List<UploadFile> imageFiles;
         //카테고리 등 추가
 
         public Item() {
         }
 
-    }
+        public Item(String itemName, String starName, Integer price) {
+                this.itemName = itemName;
+                this.starName = starName;
+                this.price = price;
+        }
+}
 

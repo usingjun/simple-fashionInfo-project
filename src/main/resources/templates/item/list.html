@@ -30,7 +30,7 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>상품이미지</th>
+<!--                <th>상품이미지</th>-->
                 <th>상품명</th>
                 <th>인플루언스 이름</th>
                 <th>가격</th>
@@ -40,8 +40,8 @@
             <tr th:each="item : ${items}">
                 <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"
                        th:text="${item.itemId}">1</a></td>
-                <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"
-                       th:text="${item.getImageFile().getUploadFileName()}"></a></td>
+<!--                <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"-->
+<!--                       th:text="${item.getImageFile().getUploadFileName()}"></a></td>-->
                 <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"
                        th:text="${item.itemName}">테스트 상품1</a></td>
                 <td th:text="${item.starName}">Jk</td>

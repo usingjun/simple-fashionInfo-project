@@ -18,39 +18,39 @@ import java.util.List;
 public class ItemController {
 
     private final ItemRepository itemRepository;
-    private final FileStore fileStore;
+//    private final FileStore fileStore;
 
     @GetMapping()
     public String read(Model model) {
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
-        return "basic/item/list";
+        return "item/list";
     }
 
     @GetMapping("/{itemId}")
     public String item(@PathVariable Long itemId, Model model) {
         Item findItem = itemRepository.findById(itemId);
         model.addAttribute(findItem);
-        return "basic/item/item";
+        return "item/item";
     }
 
 
     @GetMapping("/create")
     public String create() {
-        return "basic/item/addForm";
+        return "item/addForm";
     }
 
     @PostMapping("/create")
-    public String add(){
-
-        return "redirect:/{itemId}";
+    public String add(@ModelAttribute Item item){
+        itemRepository.save(item);
+        return "redirect:/" + item.getItemId();
     }
 
     @GetMapping("/{itemId}/edit")
     public String editForm(@PathVariable Long itemId, Model model) {
         Item findItem = itemRepository.findById(itemId);
         model.addAttribute("item", findItem);
-        return "basic/item/editForm";
+        return "item/editForm";
     }
 
     @PostMapping("/{itemId}/edit")
