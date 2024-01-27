@@ -51,14 +51,14 @@
 
 ## 프로젝트 API 명세서
 Function	Method	End Point
-상품 등록 페이지	Get	/item/new
-상품 등록	Post	/item/new
-상품 조회	Get	/item, /item/{itemId}, /item/{page}
-상품 수정 페이지	Get	/item/{itemId}/edit
-상품 수정	Post	/item/{itemId}/edit
-로그인 페이지	Get	/member/login
-로그인	Post	/member/login
-회원 가입 페이지	Get	/member/new
-회원 가입	Post	/member/new
-찜 페이지	Get	/heart
-찜 삭제	Delete	/heart/{heartId}
+- 상품 등록 페이지	Get	/item/new
+- 상품 등록	Post	/item/new
+- 상품 조회	Get	/item, /item/{itemId}, /item/{page}
+- 상품 수정 페이지	Get	/item/{itemId}/edit
+- 상품 수정	Post	/item/{itemId}/edit
+- 로그인 페이지	Get	/member/login
+- 로그인	Post	/member/login
+- 회원 가입 페이지	Get	/member/new
+- 회원 가입	Post	/member/new
+- 찜 페이지	Get	/heart
+- 찜 삭제	Delete	/heart/{heartId}
