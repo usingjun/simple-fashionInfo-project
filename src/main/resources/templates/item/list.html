@@ -26,30 +26,13 @@
 
     <hr class="my-4">
     <div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>ID</th>
-<!--                <th>상품이미지</th>-->
-                <th>상품명</th>
-                <th>인플루언스 이름</th>
-                <th>가격</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="item : ${items}">
-                <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"
-                       th:text="${item.itemId}">1</a></td>
-<!--                <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"-->
-<!--                       th:text="${item.getImageFile().getUploadFileName()}"></a></td>-->
-                <td><a href="item.html" th:href="@{/{itemId}(itemId=${item.itemId})}"
-                       th:text="${item.itemName}">테스트 상품1</a></td>
-                <td th:text="${item.starName}">Jk</td>
-                <td th:text="${item.price}">100000</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        <th:block th:each="item : ${items}">
+            <div class="col-md-4 margin">
+                <div class="card">
+                    <a th:href="'/'+${item.id}">
+                        <img th:src="${item.imgUrl}"
+                    </a></div>
+        </th:block>
     <!-- /container -->
 </body>
 </html>

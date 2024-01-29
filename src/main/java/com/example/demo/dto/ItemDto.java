@@ -1,13 +1,10 @@
-package com.example.demo;
+package com.example.demo.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
 
 @Getter @Setter
-public class ItemForm {
+public class ItemDto {
     private Long itemId;
     private String itemName;
     private String starName;

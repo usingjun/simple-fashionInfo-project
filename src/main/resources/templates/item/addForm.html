@@ -38,6 +38,42 @@
             <label for="price">가격</label>
             <input type="text" id="price" name="price" class="form-control" placeholder="수량을 입력하세요">
         </div>
+        <div>
+            <label for="itemDetail">상품 상세 내용</label>
+            <textarea type="text" id="itemDetail" name="itemDetail" class="form-control"
+                      th:field="*{itemFormDto.itemDetail}">
+            </textarea>
+        </div>
+        <div th:if="${#lists.isEmpty(itemFormDto.itemImgDtoList)}">
+            <div class="form-group">
+                <div class="custom-file img-div">
+                    <input type="file" class="custom-file-input" name="itemImgFile">
+                    <label class="custom-file-label" th:text="상품이미지"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="custom-file img-div">
+                    <input type="file" class="custom-file-input" name="itemImgFile">
+                    <label class="custom-file-label" th:text="상품이미지"></label>
+                </div>
+            </div>
+        </div>
+        <div th:if="${not #lists.isEmpty(itemFormDto.itemImgDtoList)}">
+            <div class="form-group" th:each="itemImgDto, status: ${itemFormDto.itemImgDtoList}">
+                <div class="custom-file img-div">
+                    <input type="file" class="custom-file-input" name="itemImgFile">
+                    <input type="hidden" th:value="${itemImgDto.id}" name="itemImgIds">
+                    <label class="custom-file-label" th:text="${not #strings.isEmpty(itemImgDto.oriImgName)} ? ${itemImgDto.oriImgName} : '상품이미지' + ${status.index+1}"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="custom-file img-div">
+                    <input type="file" class="custom-file-input" name="itemImgFile">
+                    <label class="custom-file-label" th:text="상품이미지"></label>
+                </div>
+            </div>
+        </div>
+
         <hr class="my-4">
         <div class="row">
             <div class="col">
